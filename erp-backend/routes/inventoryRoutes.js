@@ -6,6 +6,8 @@ import {
   updateStockTransaction,
   getAllStockTransactions
 } from '../controllers/inventoryController.js';
+import { verifyToken } from '../middleware/authMiddleware.js';
+
 
 const router = express.Router();
 

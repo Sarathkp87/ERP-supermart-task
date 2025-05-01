@@ -25,7 +25,6 @@ const supplierSchema = new mongoose.Schema({
   },
   supplier_id:{
     type:Number,
-    required:true
   }
 });
 

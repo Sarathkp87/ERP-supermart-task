@@ -8,7 +8,7 @@ import supplierRoutes from './routes/supplierRoutes.js';
 import inventoryRoutes from './routes/inventoryRoutes.js';
 import reportRoutes from './routes/reportRoutes.js';
 import { errorHandler } from './middleware/errorMiddleware.js';
-
+import authRoutes from './routes/authRoutes.js';
 
 dotenv.config();
 connectDB();
@@ -20,7 +20,7 @@ app.use(express.json());
 // Connect DB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 
-
+app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/suppliers', supplierRoutes);
 app.use('/api/inventory', inventoryRoutes);
